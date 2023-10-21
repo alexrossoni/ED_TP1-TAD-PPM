@@ -4,7 +4,7 @@ LDFLAGS =
 
 SRCS = main.c image.c
 OBJS = $(SRCS:.c=.o)
-EXECUTABLE = image_processing
+EXECUTABLE = tad_imagens_ppm
 
 all: $(EXECUTABLE)
 
