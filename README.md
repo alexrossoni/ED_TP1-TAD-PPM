@@ -56,7 +56,35 @@ Após a compilação bem-sucedida, você pode executar o programa da seguinte ma
 
 ## Principais Decisões de Implementação
 
-- Em construção...
+#### Estrutura de Dados
+O projeto utiliza uma estrutura de dados Image, definida em image.h, para representar imagens PPM. Esta estrutura contém os seguintes campos:
+
+int rows: O número de linhas da imagem.
+int cols: O número de colunas da imagem.
+char type[3]: Uma string de tamanho 3 que armazena o tipo da imagem PPM ("P2" para tons de cinza e "P3" para RGB).
+unsigned char **pixels: Uma matriz que armazena os valores dos pixels da imagem.
+
+#### Alocação de Memória
+Para a alocação de memória, o projeto utiliza funções malloc para criar uma estrutura Image e alocar memória para a matriz de pixels. É importante notar que o código trata possíveis erros de alocação de memória, exibindo mensagens de erro e encerrando o programa em caso de falha na alocação.
+
+#### Leitura e Escrita de Imagens
+A leitura e escrita de imagens PPM são implementadas nas funções load_from_ppm e write_to_ppm no arquivo image.c. O projeto suporta tanto imagens RGB (Tipo "P3") quanto imagens em tons de cinza (Tipo "P2"). A leitura de cores RGB é feita de acordo com os valores RGB fornecidos no arquivo PPM, enquanto a leitura de imagens em tons de cinza lê valores de tons de cinza diretamente.
+
+#### Conversão para Tons de Cinza
+A conversão de imagens coloridas em tons de cinza é implementada na função rgb_to_gray no arquivo image.c. O projeto utiliza uma fórmula para calcular o valor de cinza com base nos valores dos canais de cor vermelho, verde e azul. A fórmula utilizada é: gray = 0.299 * r + 0.587 * g + 0.114 * b.
+
+#### Interface de Usuário
+O arquivo main.c implementa um menu de texto simples para interagir com o usuário. O menu oferece as seguintes opções:
+
+1. Carregar imagem
+2. Converter para níveis de cinza
+3. Gravar imagem
+4. Sair
+
+O programa permite que o usuário realize essas ações em imagens PPM carregadas.
+
+#### Gerenciamento de Memória
+O projeto inclui uma função free_image para liberar a memória alocada para as imagens. Essa função é chamada para evitar vazamento de memória quando as imagens não são mais necessárias.
 
 ## Autor(es)
 
