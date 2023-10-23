@@ -9,7 +9,7 @@
 * @param rows O número de linhas da imagem.
 * @param cols O número de colunas da imagem.
 * @param type O tipo da imagem (por exemplo, "P2" para tons de cinza ou "P3" para RGB).
-* @return Um ponteiro para a imagem recém-criada.
+* @return Um ponteiro para a imagem criada.
 */
 Image* create(int rows, int cols, char type[]) {
     Image* image = (Image*)malloc(sizeof(Image));
@@ -215,7 +215,7 @@ void free_image(Image* image) {
 */
 Image* load_image() {
     char filename[256];
-    printf("Digite o nome do arquivo PPM para carregar: ");
+    printf("Digite o caminho do arquivo PPM para carregar: ");
     scanf("%255s", filename);
 
     Image* image = load_from_ppm(filename);
@@ -272,7 +272,7 @@ void save_image(Image* image) {
     }
 
     char filename[256];
-    printf("Digite o nome do arquivo PPM para salvar: ");
+    printf("Digite o caminho do arquivo PPM para salvar: ");
     scanf("%255s", filename);
 
     write_to_ppm(image, filename);

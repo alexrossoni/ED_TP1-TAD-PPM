@@ -1,4 +1,4 @@
-# Trabalho de Estrutura de Dados: Manipulação de Imagens PPM
+# Trabalho Prático 1 de Estrutura de Dados: Manipulação de Imagens PPM
 
 Este repositório contém um programa em C que implementa um Tipo Abstrato de Dados (TAD) para a leitura e gravação de imagens no formato PPM, além de realizar a conversão de imagens coloridas em imagens em níveis de cinza. O programa é destinado à disciplina de Estrutura de Dados e foi desenvolvido no ambiente Ubuntu 22.04 com GCC v11 (É **fortemente recomendável** a execução do programa em um ambiente de mesma configuração).
 
