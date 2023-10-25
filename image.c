@@ -83,7 +83,7 @@ Image* load_from_ppm(const char* filename) {
     // Aloca memória para os valores dos pixels
     image->pixels = (unsigned char**)malloc(image->rows * sizeof(unsigned char*));
     for (int i = 0; i < image->rows; i++) {
-        image->pixels[i] = (unsigned char*)malloc(image->cols * 3 * sizeof(unsigned char)); // 3 bytes for RGB
+        image->pixels[i] = (unsigned char*)malloc(image->cols * 3 * sizeof(unsigned char)); // 3 bytes para RGB
     }
 
     if (strcmp(image->type, "P3") == 0) {
